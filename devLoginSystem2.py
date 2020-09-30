@@ -647,7 +647,8 @@ def retrival():
 
     txt1 = Text(rf, width=37, font=("Helvetica", 12, "bold"), fg='purple', bd=10, relief="ridge", height=28)
     s = Scrollbar(rf, relief="ridge", bd=7)
-    s.place(x=330, y=290)
+#     s.place(x=330, y=290) ----> Dont place it, just pack it for better scroll bar
+    s.pack(side=RIGHT,fill=Y) #--------> Try this , it will solve your problem
     s.config(command=txt1.yview)
     txt1.configure(state='disabled')
     txt1.place(x=0, y=57)
